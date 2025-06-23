@@ -1,0 +1,167 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* GLOBAL */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f3f4f6;
+  color: #1f2937;
+  padding: 30px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #1e293b;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* BUTTONS */
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #3b82f6;
+  color: #fff;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background: #2563eb;
+}
+
+.btn-danger {
+  background: #ef4444;
+}
+
+.btn-danger:hover {
+  background: #dc2626;
+}
+
+/* TABLEAU */
+.table-wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+thead {
+  background-color: #1e293b;
+  color: #fff;
+}
+
+th, td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+td img {
+  border-radius: 6px;
+  max-width: 80px;
+  height: auto;
+}
+
+td.actions a {
+  margin-right: 10px;
+}
+
+/* FORM STYLES */
+form label {
+  display: block;
+  margin-top: 1rem;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+form input,
+form textarea,
+form select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  background-color: #fff;
+}
+
+form textarea {
+  resize: vertical;
+}
+
+form button {
+  margin-top: 20px;
+}
+
+/* FOOTER */
+footer {
+  margin-top: 40px;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #6b7280;
+}
+.login-wrapper {
+    max-width: 400px;
+    margin: 80px auto;
+    background: #f1f5f9;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.login-wrapper h2 {
+    margin-bottom: 20px;
+    color: #1e293b;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.login-form input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+.login-form button {
+    background: #3b82f6;
+    color: white;
+    border: none;
+    padding: 10px;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.login-form button:hover {
+    background: #2563eb;
+}
+
+.error-msg {
+    color: #ef4444;
+    font-weight: bold;
+    margin-bottom: 1em;
+}
