@@ -1,20 +1,18 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // MENU BURGER
+  // ======= MENU BURGER =======
   const burger = document.getElementById('burger');
   const navLinks = document.getElementById('navLinks');
-
   if (burger && navLinks) {
     burger.addEventListener('click', () => {
       navLinks.classList.toggle('show');
     });
-
     // Fermer menu au clic sur un lien
     navLinks.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => navLinks.classList.remove('show'));
     });
   }
 
-  // ANIMATION REVEAL
+  // ======= ANIMATION REVEAL (cartes/offres/projets) =======
   const animatedCards = document.querySelectorAll('.reveal, .offre-card, .projet-card');
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -26,24 +24,27 @@ document.addEventListener("DOMContentLoaded", () => {
   }, { threshold: 0.2 });
   animatedCards.forEach(el => observer.observe(el));
 
-  // CARROUSEL AUTO défilement horizontal (exemples de sites)
-  const track = document.querySelector('.carousel-track');
-  if (track) {
-    track.style.display = 'flex';
-    track.style.gap = '20px';
-    track.style.animation = 'slide 20s linear infinite';
-    track.style.width = 'max-content';
+  // ======= CARROUSEL AUTO LOOP "Exemples de sites" =======
+  document.querySelectorAll('.carousel-auto').forEach(carousel => {
+    const track = carousel.querySelector('.carousel-track');
+    if (track) {
+      // Clone les items pour un loop parfait (double la piste)
+      track.innerHTML += track.innerHTML;
 
-    // PAUSE AU SURVOL
-    track.addEventListener('mouseover', () => {
-      track.style.animationPlayState = 'paused';
-    });
-    track.addEventListener('mouseout', () => {
-      track.style.animationPlayState = 'running';
-    });
-  }
+      // Animation auto
+      track.style.animation = 'slide 20s linear infinite';
 
-  // ZOOM IMAGE PLEIN ÉCRAN AU CLIC
+      // Pause au survol
+      track.addEventListener('mouseover', () => {
+        track.style.animationPlayState = 'paused';
+      });
+      track.addEventListener('mouseout', () => {
+        track.style.animationPlayState = 'running';
+      });
+    }
+  });
+
+  // ======= ZOOM IMAGE PLEIN ÉCRAN AU CLIC =======
   document.querySelectorAll(".carousel-item img").forEach(img => {
     img.addEventListener("click", () => {
       const lightbox = document.createElement("div");
@@ -54,7 +55,6 @@ document.addEventListener("DOMContentLoaded", () => {
       lightbox.querySelector('.close').addEventListener('click', () => {
         lightbox.remove();
       });
-
       lightbox.addEventListener('click', (e) => {
         if (e.target === lightbox) lightbox.remove();
       });
@@ -62,8 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-// Défilement manuel du carrousel (flèches)
-// Utilise scrollCarousel('carousel-sites', 1) ou scrollCarousel('carousel-sites', -1)
+// ======= DÉFILEMENT MANUEL CARROUSEL (flèches si tu veux) =======
 function scrollCarousel(id, direction) {
   const el = document.getElementById(id);
   if (el) {

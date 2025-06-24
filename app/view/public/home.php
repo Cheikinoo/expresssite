@@ -24,36 +24,31 @@
     </div>
   </section>
 
-  <!-- SECTION SERVICES -->
-  <div class="carousel-wrapper">
-  <button class="carousel-btn left" onclick="scrollCarousel(-1)">←</button>
-
-  <div class="carousel" id="carousel-sites">
-    <!-- Exemple -->
-    <div class="carousel-item">
-      <img src="/images/coiffeur.jpg" alt="Site vitrine">
-        <p>Site vitrine moderne</p>
-      </div>
-      <div class="carousel-item">
-        <img src="/images/coiffeur.jpg" alt="Google Maps">
-        <p>Google Maps intégrée</p>
-      </div>
-      <div class="carousel-item">
-        <img src="/images/coiffeur.jpg" alt="Contact">
-        <p>Formulaire de contact</p>
-      </div>
-      <div class="carousel-item">
-        <img src="/images/coiffeur.jpg" alt="Click & Collect">
-        <p>Click & Collect</p>
-      </div>
-      <div class="carousel-item">
-        <img src="/images/coiffeur.jpg" alt="Responsive">
-        <p>Design mobile</p>
-      </div>
+<!-- SECTION SERVICES (NOUVELLE VERSION SANS CARROUSEL) -->
+<section class="services-list" id="services">
+  <h2>Nos services inclus</h2>
+  <div class="services-cards">
+    <div class="service-card">
+      <img src="/images/site-vitrine.png" alt="Site vitrine">
+      <p>Site vitrine moderne</p>
     </div>
-      <button class="carousel-btn right" onclick="scrollCarousel(1)">→</button>
-</div>
-  </section>
+  
+    <div class="service-card">
+      <img src="/images/contact.png" alt="Contact">
+      <p>Formulaire de contact</p>
+    </div>
+    <div class="service-card">
+      <img src="/images/click-collect.png" alt="Click & Collect">
+      <p>Click & Collect</p>
+    </div>
+    <div class="service-card">
+      <img src="/images/responsive.png" alt="Responsive">
+      <p>Design mobile</p>
+    </div>
+  </div>
+</section>
+
+
 
   <!-- SECTION POURQUOI NOUS -->
   <section class="services" id="pourquoi">
@@ -66,26 +61,40 @@
     </div>
   </section>
 
-  <!-- SECTION EXEMPLES RÉALISÉS -->
-  <section class="services">
-    <h2>Exemples de sites réalisés</h2>
-    <div class="carousel-auto" id="carousel">
-      <div class="carousel-track">
-        <div class="carousel-item">
-          <img src="<?= BASE_URL ?>images/salon-coifure.jpg" alt="Coiffeur ExpressCut">
-          <p>Coiffeur ExpressCut</p>
-        </div>
-        <div class="carousel-item">
-          <img src="<?= BASE_URL ?>images/kebab.jpg" alt="Snack Le Dwich">
-          <p>Snack Le Dwich</p>
-        </div>
-        <div class="carousel-item">
-          <img src="<?= BASE_URL ?>images/afro.jpg" alt="Boutique Afrodream">
-          <p>Boutique Afrodream</p>
-        </div>
+<!-- SECTION EXEMPLES RÉALISÉS -->
+<section class="realisations" id="realisations">
+  <h2>Exemples de sites réalisés</h2>
+  <div class="carousel-wrapper">
+    <div class="carousel" id="carousel-exemples">
+
+      <div class="carousel-item realisation-card">
+        <img src="/images/salon-coifure.jpg" alt="Coiffeur ExpressCut">
+        <h3>Coiffeur ExpressCut</h3>
+        <p class="real-desc">Site vitrine pour salon de coiffure à Bruxelles. Prise de RDV facile, présentation des services et galerie photos.</p>
+        <a href="https://exemple.com/expresscut" class="real-btn" target="_blank">🔗 Voir le site</a>
       </div>
+
+      <div class="carousel-item realisation-card">
+        <img src="/images/kebab.jpg" alt="Snack Le Dwich">
+        <h3>Snack Le Dwich</h3>
+        <p class="real-desc">Commande en ligne, menu dynamique et click & collect pour snack rapide, halal et savoureux.</p>
+        <a href="https://exemple.com/dwich" class="real-btn" target="_blank">🔗 Voir le site</a>
+      </div>
+
+      <div class="carousel-item realisation-card">
+        <img src="/images/afro.jpg" alt="Boutique Afrodream">
+        <h3>Boutique Afrodream</h3>
+        <p class="real-desc">Boutique de vêtements africains et accessoires. Galerie, contact, Google Maps et réservation WhatsApp.</p>
+        <a href="https://exemple.com/afrodream" class="real-btn" target="_blank">🔗 Voir le site</a>
+      </div>
+
+      <!-- ... Ajoute d'autres projets ici ... -->
+
     </div>
-  </section>
+  </div>
+</section>
+
+
 
   <!-- BOUTON STICKY -->
   <a href="contact" class="sticky-cta">🚀 Créer mon site</a>
