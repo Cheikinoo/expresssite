@@ -23,10 +23,17 @@ $uri_parts = array_values(array_filter(explode('/', trim($uri, '/'))));
 //var_dump($uri_parts);
 // Zone
 // Zone
+// ... gestion zone ...
 $zone = 'public';
 if (!empty($uri_parts[0]) && $uri_parts[0] === 'admin') {
     $zone = 'admin';
     array_shift($uri_parts);
+}
+
+// REDIRECTION ADMIN : si /admin/, redirige vers dashboard
+if ($zone === 'admin' && (empty($uri_parts[0]) || $uri_parts[0] === '')) {
+    header('Location: ' . BASE_URL . 'admin/dashboard');
+    exit;
 }
 
 // Contrôleur et action
@@ -35,10 +42,11 @@ $action     = $uri_parts[1] ?? $controller;
 $id         = $uri_parts[2] ?? null;
 
 
-// var_dump("ZONE: $zone");
-// var_dump("CONTROLLER: $controller");
-// var_dump("ACTION: $action");
-// var_dump("ID: $id");
+//var_dump("ZONE: $zone");
+ 
+ //var_dump("CONTROLLER: $controller");
+ //var_dump("ACTION: $action");
+ //var_dump("ID: $id");
 // Redirection si admin non connecté (sauf sur login)
 if ($zone === 'admin' && $controller !== 'login' && empty($_SESSION['admin'])) {
     header('Location: ' . BASE_URL . 'admin/login');
